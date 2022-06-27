@@ -27,7 +27,9 @@ import { Near, NearConfig } from './near';
 import fetch from './utils/setup-node-fetch';
 import { logWarning } from './utils';
 
-global.fetch = fetch;
+if (!global.fetch) {
+    global.fetch = fetch;
+}
 
 export interface ConnectConfig extends NearConfig {
     /**
