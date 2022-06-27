@@ -63,7 +63,8 @@
         "fix": "eslint test --fix && eslint src/**/*.ts --fix",
         "prefuzz": "yarn build",
         "fuzz": "jsfuzz test/fuzz/borsh-roundtrip.js test/fuzz/corpus/",
-        "prepare": "husky install"
+        "prepare": "husky install",
+        "postinstall": "yarn prepublish && yarn dist"
     },
     "bundlewatch": {
         "files": [
